@@ -1,0 +1,39 @@
+{
+   "action": {
+      "default_icon": "icon/128yun.png"
+   },
+   "background": {
+      "service_worker": "js/background.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "css": [ "css/main.css" ],
+      "js": [ "js/content.js", "js/jquery.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "js/kodepayContent.js" ],
+      "matches": [ "https://kodepay.io/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'; frame-src 'self'; child-src 'self'"
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "differential_fingerprint": "1.bf369731fa745ad0753feae4a0ae169f4a7a633e36b8abf1d5f1d2c6c8c25157",
+   "host_permissions": [ "*://*.findniche.com/*", "*://kodepay.io/*", "*://*.kodepay.io/*" ],
+   "icons": {
+      "128": "icon/128yun.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiomhUYrMYJzilBVubyqjD30wLI3mb1AEy5h8Wii01ENHy7wnp6q9Zxpn54us0jnv+g34Z3N0Dr7QRa3u9/oLdKEIRzq+QlizbS5qhZ5LGftukD1jIRoW4mSNBawiEFnmWEtEIpp5+Jx7hWU1kyxTvHwNWFw4qwaI+ecV+UeXU9vhQW378Jfxqs2lGT6CL3fmRiyie4ncex8hOatkraweXPFJLGJ60H/JKEpQo3UnWvTpSW/3RysLWL4+9Snu1ffc87LKyDPZbWlQGFD0S+kJiZ50JOswN4OI7qlNnoAa4cAv/SkBAUONRWsNf+/+vcub0l1ghaRjqAQYwbM6WgEJhQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "permissions": [ "webRequest", "activeTab", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.3",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "img/*", "icon/*", "css/*" ]
+   } ]
+}
